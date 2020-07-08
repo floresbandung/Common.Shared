@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Tata.Buku.Common.Shared.Extensions
+namespace DD.Tata.Buku.Common.Shared.Extensions
 {
     public static class NumberExtension
     {

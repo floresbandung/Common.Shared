@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace Tata.Buku.Common.Shared.Extensions
+namespace DD.Tata.Buku.Common.Shared.Extensions
 {
     public static class StringExtensions
     {
