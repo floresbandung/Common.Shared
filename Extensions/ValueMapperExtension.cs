@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Omu.ValueInjecter;
 
-namespace DD.Tata.Buku.Common.Shared.Extensions
+namespace DD.Tata.Buku.Shared.Extensions
 {
     public static class ValueMapperExtension
     {
