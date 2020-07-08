@@ -1,0 +1,2 @@
+# Common.Shared
+class shared
