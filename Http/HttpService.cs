@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,27 +12,15 @@ namespace DD.Tata.Buku.Shared.Http
 {
     public class HttpService : IHttpService
     {
-        private readonly IConfiguration _configuration;
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        protected readonly HttpClient _client;
+        private readonly HttpClient _client;
         public event EventHandler<AfterResponseEventArgs> AfterResponseEventHandler;
         public event EventHandler<OnErrorEventArgs> OnErrorEventHandler;
 
-        public HttpService(IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
+        public HttpService()
         {
-            _configuration = configuration;
-            _httpContextAccessor = httpContextAccessor;
             _client = new HttpClient();
         }
-        
-        /*public HttpService(IHttpContextAccessor httpContextAccessor, MediaTypeWithQualityHeaderValue mediaTypeWithQualityHeaderValue)
-        {
-            _httpContextAccessor = httpContextAccessor;
-            var handler = new HttpClientHandler {UseProxy = true};
-            _client = new HttpClient(handler);
-            _client.DefaultRequestHeaders.Accept.Add(mediaTypeWithQualityHeaderValue);
-        }*/
-        
+
         public virtual async Task<HttpServiceResult<T>> GetAsJson<T>(Uri uri, Action<HttpRequestMessage> action = null) where T : class
         {
             try
