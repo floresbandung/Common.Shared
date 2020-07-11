@@ -12,6 +12,7 @@ namespace DD.Tata.Buku.Shared.Http
 {
     public class HttpService : IHttpService
     {
+
         private readonly HttpClient _client;
         public event EventHandler<AfterResponseEventArgs> AfterResponseEventHandler;
         public event EventHandler<OnErrorEventArgs> OnErrorEventHandler;
@@ -20,7 +21,7 @@ namespace DD.Tata.Buku.Shared.Http
         {
             _client = new HttpClient();
         }
-
+        
         public virtual async Task<HttpServiceResult<T>> GetAsJson<T>(Uri uri, Action<HttpRequestMessage> action = null) where T : class
         {
             try
