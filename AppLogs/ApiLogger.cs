@@ -120,6 +120,11 @@ namespace DD.Tata.Buku.Shared.Logs
             _logger.Log(level, eventId, state, null, (h, e) => message );
         }
 
+        public void LogInformation(string message, int eventId = 0)
+        {
+            _logger.LogInformation(new EventId(eventId), message);
+        }
+
         public static string NewId()
         {
             return  Environment.MachineName + "_" + (long)(DateTime.UtcNow.Subtract(new DateTime(2020, 1, 1))).TotalMilliseconds;

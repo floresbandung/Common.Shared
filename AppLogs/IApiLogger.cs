@@ -13,5 +13,6 @@ namespace DD.Tata.Buku.Shared.Logs
         void Debug<T>(string message, T content, string eventId = "0");
         void Debug<T>(string message, string eventId = "0");
         void Debug<T>(T content, string eventId = "0");
+        void LogInformation(string message, int eventId = 0);
     }
 }
